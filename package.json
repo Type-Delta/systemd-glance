@@ -1,0 +1,25 @@
+{
+  "name": "systemd-glance",
+  "version": "0.1.0",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc src/index.ts --outDir dist",
+    "bun-start": "bun src/index.ts",
+    "bun-dev": "bun --watch src/index.ts",
+    "node-start": "tsx src/index.ts",
+    "node-dev": "tsx watch src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22.13.14",
+    "tsx": "^4.19.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elysiajs/node": "^1.2.6",
+    "elysia": "^1.2.25"
+  }
+}

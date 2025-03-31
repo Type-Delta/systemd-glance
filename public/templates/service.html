@@ -1,0 +1,41 @@
+<li class="flex items-center gap-5">
+   <div class="shrink-0 systemd-icon-cont">
+      <svg class="systemd-icon" fill="var(--color-text-highlight)" xmlns="http://www.w3.org/2000/svg" viewBox="20 20 236 236">
+         <path d="M208,40H48A16,16,0,0,0,32,56v48a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V56A16,16,0,0,0,208,40ZM180,92a12,12,0,1,1,12-12A12,12,0,0,1,180,92Z"></path>
+         <path d="M208,136H48a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V152A16,16,0,0,0,208,136Zm-28,52a12,12,0,1,1,12-12A12,12,0,0,1,180,188Z"></path>
+      </svg>
+   </div>
+   <div class="systemd-serv-title min-width-0">
+      <div class="someclass" title="{{ $service.title }} {{ if $service.title != $service.name }}({{ $service.name }}){{ endif }}">
+         <div class="size-title-dynamic color-highlight text-truncate">{{ $service.title }}</div>
+         <div class="size-h4 text-truncate">{{ $service.name }}</div>
+      </div>
+   </div>
+
+   <div class="margin-left-auto flex gap-5 shrink-0">
+   {{ if $service.activeState == "active" }}
+      <div class="size-h4 color-positive">
+         {{ $service.activeState }}
+      </div>
+   {{ elseif $service.activeState == "inactive" }}
+      <div class="size-h4 color-subdue">
+         {{ $service.activeState }}
+      </div>
+   {{ elseif $service.activeState == "failed" }}
+      <div class="size-h4 color-negative">
+         ⛔ {{ $service.activeState }}
+      </div>
+   {{ elseif $service.activeState == "reloading" }}
+      <div class="size-h4 color-negative">
+         ⚠️ {{ $service.activeState }}
+      </div>
+   {{ else }}
+      <div class="size-h4 color-subdue">
+         {{ $service.activeState }}
+      </div>
+   {{ endif }}
+      <div class="size-h4 color-subdue">
+         ({{ $service.subState }})
+      </div>
+   </div>
+</li>

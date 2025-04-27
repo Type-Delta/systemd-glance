@@ -15,7 +15,7 @@ export async function createWidgetResponse(
    try {
       for(let i = 0; i < serviceNames.length; i++) {
          const serviceName = serviceNames[i].trim();
-         const serviceTitle = serviceTitles[i].trim() || serviceName;
+         const serviceTitle = serviceTitles[i]?.trim() || serviceName;
 
          servicesHTMLList.push(template.resolveTemplate('service', {
             'service.activeState': status[i].activeState,

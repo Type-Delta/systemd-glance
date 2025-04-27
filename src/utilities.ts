@@ -33,19 +33,6 @@ class ParseArg_Arg {
    }
 }
 
-type Test = {
-   _moreNumbers: number[];
-   [key: string]: number | number[];
- };
- let test: Test = {
-   a: 1,
-   b: 2,
-   _moreNumbers: [2, 3],
- };
-
- test.a = 4;
-test._moreNumbers = [1, 2, 3];
-
 
 /**Splice but with string, **Note That: Unlike Array.splice() this method doesn't Overwrite
  * the original var**
